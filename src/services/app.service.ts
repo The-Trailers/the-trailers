@@ -1,4 +1,4 @@
-import { FeaturedSectionDto, SectionDto } from "../dtos/app.dto";
+import { FeaturedSectionDto, SectionDto } from "@/dtos/app.dto";
 import { axiosInstance } from "./axios";
 
 export const getFeaturedSection = async () => {

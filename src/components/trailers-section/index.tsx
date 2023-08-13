@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import TrailerPoster from "./trailer-poster.component";
-import { SectionDto } from "@/app/dtos/app.dto";
+import { SectionDto } from "@/dtos/app.dto";
 
 export default function TrailersSection(
     { section, className }:

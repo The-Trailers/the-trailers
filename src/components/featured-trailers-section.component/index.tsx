@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import FeaturedTrailerThumbnail from "./featured-trailer-thumbnail.component";
-import { FeaturedTrailerDto } from "@/app/dtos/app.dto";
+import { FeaturedTrailerDto } from "@/dtos/app.dto";
 
 export default function FeaturedTrailerSection({ className, trailerData }: {
     className?: string, trailerData: FeaturedTrailerDto[]

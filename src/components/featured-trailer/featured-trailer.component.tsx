@@ -3,7 +3,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import FeaturedTrailerSection from "../featured-trailers-section.component";
 import FeaturedTrailerTitle from "./featured-trailer-title.component";
-import { FeaturedTrailerDto } from "../../dtos/app.dto";
+import { FeaturedTrailerDto } from "@/dtos/app.dto";
 import classNames from "classnames";
 
 export const FeatureTrailerContext = createContext<{

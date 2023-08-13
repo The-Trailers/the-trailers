@@ -1,4 +1,4 @@
-import { MovieSourceCode } from "@/app/enums/app.enum";
+import { MovieSourceCode } from "@/enums/app.enum";
 import classNames from "classnames";
 
 export default function TrailerPosterSourceTag({ sourceName, sourceCode }

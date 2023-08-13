@@ -1,4 +1,4 @@
-import { SectionTrailerDto } from "@/app/dtos/app.dto";
+import { SectionTrailerDto } from "@/dtos/app.dto";
 import classNames from "classnames"
 import TrailerPosterSourceTag from "./trailer-poster-source-tag.component";
 
