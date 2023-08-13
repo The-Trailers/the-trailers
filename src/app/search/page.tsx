@@ -33,7 +33,7 @@ export default function Search() {
             </div>
 
 
-            <div className="flex gap-x-2 gap-y-10 md:gap-10 flex-wrap justify-center">
+            <div className="flex gap-x-2 gap-y-10 md:gap-10 flex-wrap justify-center sm:justify-start">
                 {
                     searchResults?.length ?
                         searchResults.map((result, idx) =>
