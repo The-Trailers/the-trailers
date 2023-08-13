@@ -9,19 +9,15 @@ export default function TrailerPoster({ trailer, className }: { trailer: Section
         day: "numeric"
     });
 
-    const width = 260;
-    const height = 386;
-
     return (
         <Link href={`/details/${trailer._id}`}>
             <div className={classNames(
-                "select-none",
+                `select-none w-[180px] lg:w-[260px]`,
                 className
-            )} style={{ width: `${width}px` }} >
+            )} >
 
-                <div className="rounded-xl bg-gray-300 overflow-hidden mb-3">
-                    <img src={trailer.posterURL} className="object-cover"
-                        style={{ width: `${width}px`, height: `${height}px` }} />
+                <div className="rounded-xl bg-gray-300 overflow-hidden mb-3 h-[267px] lg:h-[386px]">
+                    <img src={trailer.posterURL} className="object-cover w-full h-full" />
                 </div>
 
                 <div className="line-clamp-1 mb-2" title={trailer.title}>{trailer.title}</div>

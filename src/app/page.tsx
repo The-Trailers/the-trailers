@@ -1,23 +1,19 @@
 import FeaturedTrailer from "./_components/featured-trailer";
 import FeaturedTrailerSection from "./_components/featured-trailers-section.component";
-import TrailersSection from "./_components/trailers-section";
+import TrailerSectionsList from "./_components/trailer-sections-list.component";
 import * as appService from "@/services/app.service";
 
 export default async function Home() {
   const featuredSection = await appService.getFeaturedSection();
-  const sections = await appService.getSections();
+  const sections = await appService.getSections(0, 4);
 
   return (
     <>
-      <FeaturedTrailer className="mb-24" trailerData={featuredSection.trailers}>
+      <FeaturedTrailer className="mb-14 md:mb-24" trailerData={featuredSection.trailers}>
         <FeaturedTrailerSection trailerData={featuredSection.trailers} />
       </FeaturedTrailer>
 
-      <div className="container pb-24 flex flex-col gap-24">
-        {
-          sections.map((section, idx) => <TrailersSection key={idx} className="mb-20" section={section} />)
-        }
-      </div>
+      <TrailerSectionsList initialSections={sections.results} initialTotal={sections.total} />
     </>
   )
 }

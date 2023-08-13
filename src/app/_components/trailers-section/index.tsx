@@ -16,7 +16,7 @@ export default function TrailersSection(
                     section.iconURL &&
                     <img className="mr-3 object-contain" src={section.iconURL} width={30} />
                 }
-                <span className="text-2xl font-bold uppercase">
+                <span className="text-lg lg:text-2xl font-bold uppercase">
                     {section.title}
                 </span>
             </div>

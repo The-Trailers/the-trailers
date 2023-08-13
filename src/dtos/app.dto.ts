@@ -32,10 +32,17 @@ export type SectionTrailerDto = {
     releaseDatetime: string;
 }
 
+export type SectionResultsDto = {
+    results: SectionDto[];
+    total: number;
+    index: number;
+    count: number;    
+}
+
 export type SectionDto = {
     _id: string;
     title: string;
-    iconURL?:string;
+    iconURL?: string;
     trailers: SectionTrailerDto[],
     createdAt: string;
     updatedAt: string;

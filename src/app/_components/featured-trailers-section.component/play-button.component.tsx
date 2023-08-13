@@ -5,13 +5,13 @@ import classNames from "classnames";
 export default function PlayButton({ className, isPlaying }: { className?: string, isPlaying: boolean }) {
     return (
         <button className={classNames(
-            "rounded-md w-[70px] h-[45px] bg-lime-500",
+            "rounded-md w-[40px] h-[25px] lg:w-[70px] lg:h-[45px] bg-lime-500",
             "flex justify-center items-center",
             className
         )}>
             {!isPlaying ?
-                <FontAwesomeIcon icon={faPlay} fontSize={25} />
-                : <FontAwesomeIcon icon={faPause} fontSize={25} />}
+                <FontAwesomeIcon icon={faPlay} className="text-[10px] lg:text-[25px]" />
+                : <FontAwesomeIcon icon={faPause} className="text-[10px] lg:text-[25px]" />}
         </button>
     );
 }

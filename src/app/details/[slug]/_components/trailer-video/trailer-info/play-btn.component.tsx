@@ -10,12 +10,13 @@ export default function PlayButton({ className, onPlay, isPlaying }
             "bg-lime-500",
             className
         )}>
-            <button className="w-full h-full flex justify-center items-center" onClick={() => onPlay()}>
-                <span className="w-[50px]">
+            <button className="w-full h-full flex justify-center items-center"
+                onClick={() => onPlay()}>
+                <span className="w-[20px] lg:w-[50px]">
                     {
                         isPlaying ?
-                            <FontAwesomeIcon icon={faPause} fontSize={50} />
-                            : <FontAwesomeIcon icon={faPlay} fontSize={50} />
+                            <FontAwesomeIcon icon={faPause} className="text-[20px] lg:text-[50px]" />
+                            : <FontAwesomeIcon icon={faPlay} className="text-[20px] lg:text-[50px]" />
                     }
                 </span>
             </button>

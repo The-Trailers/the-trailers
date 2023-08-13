@@ -18,27 +18,29 @@ export default function TrailerInfo({ trailerDetails, className, onPlay, isPlayi
 
     return (
         <div className={classNames(
-            "container",
+            "container px-2",
             className
         )}>
-            <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} />
+            <div className="flex lg:block gap-3 items-center">
+                <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} />
 
-            <div className="mb-5">
-                <WatchNowButton href={trailerDetails.movieSource.sourceURL} />
+                <div className="mb-5">
+                    <WatchNowButton href={trailerDetails.movieSource.sourceURL} />
+                </div>
             </div>
 
-            <div className="flex gap-10 w-full justify-center">
+            <div className="flex gap-3 lg:gap-10 w-full justify-center">
                 <PlayButton className="grow" onPlay={onPlay} isPlaying={isPlaying} />
 
                 <InfoContainer className="grow" label="PG Rating">
                     {trailerDetails.pgRating}
                 </InfoContainer>
 
-                <InfoContainer className="grow" label="Release">
+                <InfoContainer className="hidden lg:flex grow" label="Release">
                     {releaseDatetime}
                 </InfoContainer>
 
-                <InfoContainer className="grow" label="Budget">
+                <InfoContainer className="hidden lg:flex grow" label="Budget">
                     {trailerDetails.budget > 0 ? `$${budget}M` : "-"}
                 </InfoContainer>
 

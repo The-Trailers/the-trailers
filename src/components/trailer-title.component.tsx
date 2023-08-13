@@ -7,16 +7,16 @@ export default function TrailerTitle({ className, title, authors, genres }
             "flex flex-col gap-5",
             className
         )}>
-            <div className="flex gap-5">
-                {authors.map((author) => <span>{author}</span>)}
+            <div className="hidden lg:flex gap-5">
+                {authors.map((author, idx) => <span key={idx}>{author}</span>)}
             </div>
 
-            <div className="text-6xl font-bold uppercase">{title}</div>
+            <div className="text-2xl lg:text-6xl font-bold uppercase">{title}</div>
 
             {genres?.length &&
-                <div className="flex gap-5">
-                    {genres.map((genre) =>
-                        <span className="rounded-md border py-1 px-2 border-white bg-white/20 backdrop-blur">
+                <div className="hidden lg:flex gap-5">
+                    {genres.map((genre, idx) =>
+                        <span key={idx} className="rounded-md border py-1 px-2 border-white bg-white/20 backdrop-blur">
                             {genre}
                         </span>
                     )}

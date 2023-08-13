@@ -11,8 +11,8 @@ export default function Logo({ className }: { className?: string }) {
             fjalla.className,
             className
         )}>
-            <div className="text-lg">The</div>
-            <div className="text-4xl">TRAILERS</div>
+            <div className="text-xs lg:text-lg">The</div>
+            <div className="text-xl lg:text-4xl">TRAILERS</div>
         </Link>
     );
 }

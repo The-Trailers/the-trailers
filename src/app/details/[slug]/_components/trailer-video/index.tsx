@@ -48,7 +48,7 @@ export default function TrailerVideo({ className, trailerDetails }
                 </div>
             </BannerView>
 
-            <TrailerInfo className="absolute bottom-0 left-1/2 -translate-x-1/2"
+            <TrailerInfo className="relative lg:absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2"
                 trailerDetails={trailerDetails}
                 isPlaying={isVideoPlaying}
                 onPlay={onPlay} />

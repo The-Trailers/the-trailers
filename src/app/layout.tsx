@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={fjalla.className}>
         <main className="min-h-screen bg-surface overflow-x-hidden">
           <div className="absolute w-full">
-            <div className="container">
+            <div className="container px-2">
               <NavBar className="z-10" />
             </div>
           </div>

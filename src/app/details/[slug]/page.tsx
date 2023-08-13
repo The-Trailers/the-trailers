@@ -20,8 +20,8 @@ export default async function Details({ params }
         <div className="flex flex-col gap-20 pb-24">
             <TrailerVideo trailerDetails={trailerDetails} />
 
-            <div className="container flex flex-col gap-16">
-                <div className="flex gap-10">
+            <div className="container px-2 flex flex-col gap-16">
+                <div className="flex lg:flex-row flex-col gap-10">
                     <section className="grow">
                         <div className="uppercase text-white/30 mb-3">
                             Description

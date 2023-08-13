@@ -50,7 +50,7 @@ export default function TrailerPosterCarousel({ className, trailers, ...options 
             "overflow-hidden relative",
             className
         )} ref={emblaRef}>
-            <div className="flex justify-between gap-10">
+            <div className="flex gap-10">
                 {
                     trailers.map(((trailer, idx) => <TrailerPoster key={idx} trailer={trailer} />))
                 }

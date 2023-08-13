@@ -85,7 +85,7 @@ export default function FeaturedTrailer({ className, trailerData, children }
                 </div>
             </BannerView>
 
-            <div className="container absolute bottom-0 -translate-x-1/2 left-1/2">
+            <div className="container px-2 relative lg:absolute bottom-0 lg:-translate-x-1/2 lg:left-1/2">
                 <FeaturedTrailerContext.Provider value={{
                     currentTrailer,
                     currentTrailerIdx,
@@ -93,11 +93,13 @@ export default function FeaturedTrailer({ className, trailerData, children }
                     videoProgress,
                     onPlay
                 }}>
-                    <TrailerTitle className="mb-5" title={currentTrailer.title} authors={currentTrailer.authors} />
+                    <div className="flex lg:flex-col flex-row gap-5 lg:items-start items-center">
+                        <TrailerTitle title={currentTrailer.title} authors={currentTrailer.authors} />
 
-                    <div className="flex gap-5 mb-5">
-                        <WatchNowButton href={currentTrailer.movieSource.sourceURL} />
-                        <MoreInfoButton trailerId={currentTrailer._id} />
+                        <div className="flex gap-2 lg:gap-5 mb-5">
+                            <WatchNowButton href={currentTrailer.movieSource.sourceURL} />
+                            <MoreInfoButton trailerId={currentTrailer._id} />
+                        </div>
                     </div>
 
                     <FeaturedTrailerSection trailerData={trailerData} />
