@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import TrailerPoster from "./trailer-poster.component";
 import { SectionDto } from "@/dtos/app.dto";
+import TrailerPoster from "@/components/trailer-poster";
+import TrailerPosterCarousel from "@/components/trailer-poster-carousel.component";
 
 export default function TrailersSection(
     { section, className }:
@@ -20,11 +21,7 @@ export default function TrailersSection(
                 </span>
             </div>
 
-            <div className="flex justify-between">
-                {
-                    section.trailers.map(((trailer, idx) => <TrailerPoster key={idx} trailer={trailer} />))
-                }    
-            </div>
+           <TrailerPosterCarousel trailers={section.trailers} />
         </section>
     );
 }

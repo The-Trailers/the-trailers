@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import FeaturedTrailerThumbnail from "./featured-trailer-thumbnail.component";
+import Thumbnail from "./thumbnail.component";
 import { FeaturedTrailerDto } from "@/dtos/app.dto";
 
 export default function FeaturedTrailerSection({ className, trailerData }: {
@@ -8,7 +8,7 @@ export default function FeaturedTrailerSection({ className, trailerData }: {
     return (
         <section className={classNames("w-full flex justify-between", className)}>
             {trailerData.map((data, idx) => (
-                <FeaturedTrailerThumbnail key={idx} thumbnailURL={data.thumbnailURL} title={data.title} index={idx} />
+                <Thumbnail key={idx} thumbnailURL={data.thumbnailURL} title={data.title} index={idx} />
             ))}
         </section>
     );

@@ -4,6 +4,7 @@ export type FeaturedTrailerDto = {
     authors: string[];
     trailerURL: string;
     thumbnailURL: string;
+    movieSource: MovieSourceDto
 }
 
 export type FeaturedSectionDto = {

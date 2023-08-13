@@ -1,15 +1,18 @@
+"use client"
+
 import { useContext } from "react";
-import PlayButton from "./featured-trailer-play-button.component";
-import { FeatureTrailerContext } from "../featured-trailer/featured-trailer.component";
+import PlayButton from "./play-button.component";
+import { FeaturedTrailerContext } from "../featured-trailer";
 import classNames from "classnames";
 
-export default function FeaturedTrailerThumbnail({ thumbnailURL, title, index }: { thumbnailURL: string, title: string, index: number }) {
+export default function Thumbnail({ thumbnailURL, title, index }
+    : { thumbnailURL: string, title: string, index: number }) {
     let {
         currentTrailerIdx,
         videoProgress,
         isVideoPlaying,
         onPlay
-    } = useContext(FeatureTrailerContext);
+    } = useContext(FeaturedTrailerContext);
 
     const isPlaying = (currentTrailerIdx == index && isVideoPlaying) ?? false;
     videoProgress = videoProgress ?? 0;

@@ -1,4 +1,4 @@
-import { FeaturedSectionDto, SectionDto } from "@/dtos/app.dto";
+import { FeaturedSectionDto, SectionDto, SectionTrailerDto, TrailerDetailsDto } from "@/dtos/app.dto";
 import { axiosInstance } from "./axios";
 
 export const getFeaturedSection = async () => {
@@ -25,7 +25,7 @@ export const getTrailerDetails = async (trailerId: String) => {
     try {
         const result = await axiosInstance.get(`trailer/${trailerId}`);
 
-        return result.data;
+        return result.data as TrailerDetailsDto;
     } catch (error) {
         throw error;
     }
@@ -33,9 +33,9 @@ export const getTrailerDetails = async (trailerId: String) => {
 
 export const getOtherUpcomingTrailers = async (count: number) => {
     try {
-        const results = await axiosInstance.get("other-upcoming-trailers");
+        const results = await axiosInstance.get("other-upcoming-trailers", { params: { count } });
 
-        return results.data;
+        return results.data as SectionTrailerDto[];
     } catch (error) {
         throw error;
     }
