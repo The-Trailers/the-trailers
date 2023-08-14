@@ -12,7 +12,7 @@ export default function TrailerSectionsList({initialSections, initialTotal}:{ini
     const [total, setTotal] = useState(initialTotal);
     const [isLoading, setIsLoading] = useState(false);
 
-    const count = 4;
+    const count = 3;
 
     const getSections = async (index: number) => {
         setIsLoading(true);

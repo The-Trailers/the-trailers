@@ -1,19 +1,13 @@
-'use client'
+"use client"
 
-import { SectionTrailerDto } from "@/dtos/app.dto";
-import TrailerPoster from "./trailer-poster";
-import useEmblaCarousel, { EmblaOptionsType, } from "embla-carousel-react";
-import classNames from "classnames";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
+import useEmblaCarousel, { EmblaOptionsType } from "embla-carousel-react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
-export default function TrailerPosterCarousel({ className, trailers, ...options }: {
-    className?: string, trailers: SectionTrailerDto[]
-} & EmblaOptionsType) {
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        dragFree: true
-    });
+export default function Carousel({ className, children, ...options }: { className?: string } & PropsWithChildren & EmblaOptionsType) {
+    const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [canScrollNext, setCanScrollNext] = useState(false);
@@ -29,7 +23,7 @@ export default function TrailerPosterCarousel({ className, trailers, ...options 
             setCanScrollPrev(emblaApi?.canScrollPrev() || false);
             setCanScrollNext(emblaApi?.canScrollNext() || false);
         }
-        
+
         scrollControlsHandler();
 
         emblaApi?.on("resize", scrollControlsHandler);
@@ -50,10 +44,8 @@ export default function TrailerPosterCarousel({ className, trailers, ...options 
             "overflow-hidden relative",
             className
         )} ref={emblaRef}>
-            <div className="flex gap-10">
-                {
-                    trailers.map(((trailer, idx) => <TrailerPoster key={idx} trailer={trailer} />))
-                }
+            <div className="flex gap-5 lg:gap-10">
+                {children}
             </div>
 
             <button className="absolute left-0 top-1/2 -translate-y-1/2 p-3 bg-black/50"

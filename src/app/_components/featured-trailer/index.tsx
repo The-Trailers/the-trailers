@@ -93,7 +93,7 @@ export default function FeaturedTrailer({ className, trailerData, children }
                     videoProgress,
                     onPlay
                 }}>
-                    <div className="flex lg:flex-col flex-row gap-5 lg:items-start items-center">
+                    <div className="flex lg:flex-col flex-row gap-5 lg:items-start items-center mb-5 lg:mb-0">
                         <TrailerTitle title={currentTrailer.title} authors={currentTrailer.authors} />
 
                         <div className="flex gap-2 lg:gap-5 mb-5">

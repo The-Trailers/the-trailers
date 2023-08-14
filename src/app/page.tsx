@@ -5,7 +5,7 @@ import * as appService from "@/services/app.service";
 
 export default async function Home() {
   const featuredSection = await appService.getFeaturedSection();
-  const sections = await appService.getSections(0, 4);
+  const sections = await appService.getSections(0, 3);
 
   return (
     <>

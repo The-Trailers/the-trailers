@@ -42,7 +42,7 @@ export default function Thumbnail({ thumbnailURL, title, index }
                     </span>
                 }
 
-                <img className="w-[330px] h-[80px] lg:h-[180px] object-cover"
+                <img className="min-w-[200px] h-[110px] md:min-w-[250px] md:h-[135px] lg:min-w-[330px] lg:h-[180px] object-cover"
                     src={thumbnailURL} />
             </div>
 

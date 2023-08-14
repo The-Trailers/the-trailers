@@ -10,12 +10,12 @@ export default function InfoContainer({ className, label, children }
         )}>
             <>
                 <div className="hidden lg:block grow">
-                    <div className="-rotate-90 text-xs lg:text-lg text-white/50 w-min whitespace-nowrap uppercase">
+                    <div className="-rotate-90 text-xs xl:text-lg text-white/50 w-min whitespace-nowrap uppercase">
                         {label}
                     </div>
                 </div>
 
-                <div className="absolute text-2xl lg:text-4xl text-center">
+                <div className="absolute text-2xl xl:text-3xl text-center">
                     {children}
                 </div>
             </>

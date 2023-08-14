@@ -4,15 +4,15 @@ import * as appService from "@/services/app.service";
 import classNames from "classnames";
 import Cast from "./_components/cast.component";
 import Hype from "./_components/hype.component";
+import Carousel from "@/components/carousel.component";
 import TrailerPoster from "@/components/trailer-poster";
-import TrailerPosterCarousel from "@/components/trailer-poster-carousel.component";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default async function Details({ params }
     : { params: { slug: string } }) {
     const otherUpcomingTrailers = await appService.getOtherUpcomingTrailers(10);
-    
+
     const trailerDetails = await appService.getTrailerDetails(params.slug);
     const hypes = trailerDetails.hypes.sort((a, b) => a.hype._id > b.hype._id ? 1 : -1)
 
@@ -71,7 +71,11 @@ export default async function Details({ params }
                         Other Upcoming Films
                     </div>
 
-                    <TrailerPosterCarousel trailers={otherUpcomingTrailers}/>
+                    <Carousel dragFree={true}>
+                        {
+                            otherUpcomingTrailers.map((trailer, idx) => <TrailerPoster key={idx} trailer={trailer} />)
+                        }
+                    </Carousel>
                 </section>
             </div>
         </div>
