@@ -29,7 +29,7 @@ export default function Search() {
     return (
         <div className="container px-2 mt-32">
             <div className="lg:text-2xl mb-10">
-                Search results for "{query}"
+                Search results for &quot;{query}&quot;
             </div>
 
 

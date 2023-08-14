@@ -1,6 +1,7 @@
 import { HypeDto } from "@/dtos/app.dto";
 import { HypeScoreType } from "@/enums/app.enum";
 import classNames from "classnames";
+import Image from "next/image";
 
 export default function Hype({ className, hype }
     : { className?: string, hype: HypeDto }) {
@@ -25,9 +26,9 @@ export default function Hype({ className, hype }
             "flex gap-3 items-center",
             className
         )}>
-            <img className="rounded-full"
+            <Image className="rounded-full"
             style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
-                src={hype.hype.iconURL} />
+                src={hype.hype.iconURL} width={iconSize} height={iconSize} alt={hype.hype.name!} />
 
             <span>
                 {score}

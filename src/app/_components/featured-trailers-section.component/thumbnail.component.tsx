@@ -4,6 +4,7 @@ import { useContext } from "react";
 import PlayButton from "./play-button.component";
 import { FeaturedTrailerContext } from "../featured-trailer";
 import classNames from "classnames";
+import Image from "next/image";
 
 export default function Thumbnail({ thumbnailURL, title, index }
     : { thumbnailURL: string, title: string, index: number }) {
@@ -42,8 +43,8 @@ export default function Thumbnail({ thumbnailURL, title, index }
                     </span>
                 }
 
-                <img className="min-w-[200px] h-[110px] md:min-w-[250px] md:h-[135px] lg:min-w-[330px] lg:h-[180px] object-cover"
-                    src={thumbnailURL} />
+                <Image className="min-w-[200px] h-[110px] md:min-w-[250px] md:h-[135px] lg:min-w-[330px] lg:h-[180px] object-cover"
+                    src={thumbnailURL} alt={title} width={200} height={110} />
             </div>
 
             <div className="lg:absolute left-3 bottom-5 shadow-xl opacity-70 line-clamp-2 px-1">

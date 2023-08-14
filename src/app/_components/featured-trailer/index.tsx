@@ -25,15 +25,11 @@ export default function FeaturedTrailer({ className, trailerData, children }
     const [videoProgress, setVideoProgress] = useState(0);
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    if (!trailerData) {
-        return <></>
-    }
-
     const currentTrailer = trailerData[currentTrailerIdx];
 
     useEffect(() => {
         setVideoURL(currentTrailer.trailerURL);
-    }, []);
+    }, [currentTrailer.trailerURL]);
 
     const onPlay = (trailerIdx: number) => {
         if (trailerIdx != currentTrailerIdx) {

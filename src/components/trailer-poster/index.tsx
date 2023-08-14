@@ -2,6 +2,7 @@ import { SectionTrailerDto } from "@/dtos/app.dto";
 import classNames from "classnames"
 import TrailerPosterSourceTag from "./trailer-poster-source-tag.component";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TrailerPoster({ trailer, className }: { trailer: SectionTrailerDto, className?: string }) {
     const trailerDate = new Date(trailer.releaseDatetime).toLocaleDateString("en-US", {
@@ -17,7 +18,7 @@ export default function TrailerPoster({ trailer, className }: { trailer: Section
             )} >
 
                 <div className="rounded-xl bg-gray-300 overflow-hidden mb-3 h-[267px] lg:h-[386px]">
-                    <img src={trailer.posterURL} className="object-cover w-full h-full" />
+                    <Image src={trailer.posterURL} className="object-cover w-full h-full" width={180} height={267} alt={trailer.title}/>
                 </div>
 
                 <div className="line-clamp-1 mb-2" title={trailer.title}>{trailer.title}</div>

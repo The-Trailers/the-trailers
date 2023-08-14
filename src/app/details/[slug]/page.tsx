@@ -41,7 +41,7 @@ export default async function Details({ params }
 
                             <div className="flex">
                                 {hypes.map((hype, idx) =>
-                                    <Hype className={classNames(
+                                    <Hype key={idx} className={classNames(
                                         { "mr-14": idx < hypes.length - 1 }
                                     )}
                                         hype={hype} />
@@ -60,8 +60,8 @@ export default async function Details({ params }
                         "flex gap-5",
                         inter.className
                     )}>
-                        {trailerDetails.casts.map((cast) =>
-                            <Cast cast={cast} />
+                        {trailerDetails.casts.map((cast, idx) =>
+                            <Cast key={idx} cast={cast} />
                         )}
                     </div>
                 </section>
