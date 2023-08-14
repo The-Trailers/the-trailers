@@ -22,7 +22,7 @@ export default function TrailerInfo({ trailerDetails, className, onPlay, isPlayi
             className
         )}>
             <div className="flex lg:block gap-3 items-center">
-                <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} />
+                <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} isHidden={isPlaying}/>
 
                 <div className="mb-5">
                     <WatchNowButton href={trailerDetails.movieSource.sourceURL} />

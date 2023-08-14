@@ -1,11 +1,14 @@
 import classNames from "classnames";
 
-export default function TrailerTitle({ className, title, authors, genres }
-    : { className?: string, title: string, authors: string[], genres?: string[] }) {
+export default function TrailerTitle({ className, title, authors, genres, isHidden }
+    : { className?: string, title: string, authors: string[], genres?: string[], isHidden?:boolean }) {
     return (
         <div className={classNames(
-            "flex flex-col gap-5",
-            className
+            "flex flex-col gap-5 transition-opacity",
+            className,
+            {
+                "lg:opacity-0": isHidden
+            }
         )}>
             <div className="hidden lg:flex gap-5">
                 {authors.map((author, idx) => <span key={idx}>{author}</span>)}
