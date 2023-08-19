@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { SectionDto } from "@/dtos/app.dto";
-import TrailerPoster from "@/components/trailer-poster";
+import TrailerPoster, { TrailerPosterSkeleton } from "@/components/trailer-poster";
 import Carousel from "@/components/carousel.component";
 import Image from "next/image";
 
@@ -25,6 +25,23 @@ export default function TrailersSection(
             <Carousel dragFree={true}>
                 {
                     section.trailers.map((trailer, idx) => <TrailerPoster key={idx} trailer={trailer} />)
+                }
+            </Carousel>
+        </section>
+    );
+}
+
+export function TrailersSectionSkeleton({ className }: { className?: string }) {
+    return (
+        <section className={classNames(
+            className
+        )}>
+            <div className="bg-white/20 h-[45px] w-[350px] mb-8">
+            </div>
+
+            <Carousel dragFree={true}>
+                {
+                    [...Array(5)].map((item, idx) => <TrailerPosterSkeleton key={idx} />)
                 }
             </Carousel>
         </section>

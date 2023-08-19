@@ -9,9 +9,7 @@ export default async function Home() {
 
   return (
     <>
-      <FeaturedTrailer className="mb-14 md:mb-24" trailerData={featuredSection.trailers}>
-        <FeaturedTrailerSection trailerData={featuredSection.trailers} />
-      </FeaturedTrailer>
+      <FeaturedTrailer className="mb-14 md:mb-24" trailerData={featuredSection.trailers}/>
 
       <TrailerSectionsList initialSections={sections.results} initialTotal={sections.total} />
     </>

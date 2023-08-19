@@ -53,3 +53,10 @@ export default function Thumbnail({ thumbnailURL, title, index }
         </div>
     );
 }
+
+export function ThumbnailSkeleton() {
+    return (
+        <div className="rounded-3xl bg-white/20 cursor-pointer border-4 border-transparent hover:border-white min-w-[200px] h-[110px] md:w-[250px] md:h-[135px] lg:w-[330px] lg:h-[180px]">            
+        </div>
+    );
+}

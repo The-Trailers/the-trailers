@@ -22,7 +22,7 @@ export default function TrailerInfo({ trailerDetails, className, onPlay, isPlayi
             className
         )}>
             <div className="flex lg:block gap-3 items-center">
-                <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} isHidden={isPlaying}/>
+                <TrailerTitle className="mb-5" title={trailerDetails.title} authors={trailerDetails.authors} genres={genres} isHidden={isPlaying} />
 
                 <div className="mb-5">
                     <WatchNowButton href={trailerDetails.movieSource.sourceURL} />
@@ -47,6 +47,27 @@ export default function TrailerInfo({ trailerDetails, className, onPlay, isPlayi
                 <InfoContainer className="grow" label="Length">
                     {`${trailerDetails.duration} min`}
                 </InfoContainer>
+            </ div>
+        </div>
+    );
+}
+
+export function TrailerInfoSkeleton({ className }: { className?: string, }) {
+    return (
+        <div className={classNames(
+            "container px-2",
+            className
+        )}>
+            <div className="flex gap-3 lg:gap-10 w-full justify-center">
+                <PlayButton className="grow" />
+
+                <InfoContainer className="grow" />
+
+                <InfoContainer className="hidden lg:flex grow" />
+
+                <InfoContainer className="hidden lg:flex grow" />
+
+                <InfoContainer className="grow" />
             </ div>
         </div>
     );

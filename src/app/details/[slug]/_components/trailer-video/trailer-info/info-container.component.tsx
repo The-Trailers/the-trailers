@@ -2,7 +2,7 @@ import classNames from "classnames";
 import ThumbnailInfoView from "./thumbnail-info-view.component";
 
 export default function InfoContainer({ className, label, children }
-    : { className?: string, label:string, children: string }) {
+    : { className?: string, label?:string, children?: string }) {
     return (
         <ThumbnailInfoView className={classNames(
             "bg-white/20 backdrop-blur-sm relative",

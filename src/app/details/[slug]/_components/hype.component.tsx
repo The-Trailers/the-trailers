@@ -27,11 +27,30 @@ export default function Hype({ className, hype }
             className
         )}>
             <Image className="rounded-full"
-            style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
+                style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
                 src={hype.hype.iconURL} width={iconSize} height={iconSize} alt={hype.hype.name!} />
 
             <span>
                 {score}
+            </span>
+        </div>
+    );
+}
+
+export function HypeSkeleton({ className }: { className?: string }) {
+
+    const iconSize = 30;
+
+    return (
+        <div className={classNames(
+            "flex gap-3 items-center",
+            className
+        )}>
+            <div className="rounded-full bg-white/20"
+                style={{ width: `${iconSize}px`, height: `${iconSize}px` }}>
+            </div>
+
+            <span className="bg-white/20 w-[50px] h-[25px]">
             </span>
         </div>
     );

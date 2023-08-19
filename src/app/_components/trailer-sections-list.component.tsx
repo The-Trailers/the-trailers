@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react";
-import TrailersSection from "./trailers-section";
+import TrailersSection, { TrailersSectionSkeleton } from "./trailers-section";
 import * as homeService from "@/app/_services/home.service";
 import { SectionDto, SectionResultsDto } from "@/dtos/app.dto";
 import { ClipLoader } from "react-spinners";
@@ -53,6 +53,19 @@ export default function TrailerSectionsList({initialSections, initialTotal}:{ini
                 <div className="flex justify-center">
                     <ClipLoader color="white" />
                 </div>
+            }
+        </div>
+    );
+}
+
+
+export function TrailerSectionsListSkeleton() {
+    const count = 3;
+
+    return (
+        <div className="container px-2 pb-24 flex flex-col gap-6 lg:gap-24">
+            {
+                [...Array(count)].map((section, idx) => <TrailersSectionSkeleton key={idx} className="mb-20" />)
             }
         </div>
     );

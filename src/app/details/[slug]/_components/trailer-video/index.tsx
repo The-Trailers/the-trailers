@@ -3,7 +3,7 @@
 import { TrailerDetailsDto } from "@/dtos/app.dto";
 import classNames from "classnames";
 import BannerView from "@/components/banner-view.component";
-import TrailerInfo from "./trailer-info";
+import TrailerInfo, { TrailerInfoSkeleton } from "./trailer-info";
 import { useRef, useState } from "react";
 
 export default function TrailerVideo({ className, trailerDetails }
@@ -52,6 +52,23 @@ export default function TrailerVideo({ className, trailerDetails }
                 trailerDetails={trailerDetails}
                 isPlaying={isVideoPlaying}
                 onPlay={onPlay} />
+        </div>
+    );
+}
+
+export function TrailerVideoSkeleton({ className }: { className?: string }) {
+    return (
+        <div className={classNames(
+            "relative",
+            className
+        )}>
+            <BannerView>
+                <div className="w-full bg-gray-500 max-h-[816px] overflow-hidden">
+                    <video className="w-full"></video>
+                </div>
+            </BannerView>
+
+            <TrailerInfoSkeleton className="relative lg:absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2" />
         </div>
     );
 }

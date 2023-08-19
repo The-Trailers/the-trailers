@@ -1,7 +1,7 @@
 "use client"
 
 import { createContext, useEffect, useRef, useState } from "react";
-import FeaturedTrailerSection from "../featured-trailers-section.component";
+import FeaturedTrailerSection, { FeaturedTrailerSectionSkeleton } from "../featured-trailers-section.component";
 import { FeaturedTrailerDto } from "@/dtos/app.dto";
 import classNames from "classnames";
 import BannerView from "@/components/banner-view.component";
@@ -17,8 +17,8 @@ export const FeaturedTrailerContext = createContext<{
     onPlay?: (index: number) => void
 }>({});
 
-export default function FeaturedTrailer({ className, trailerData, children }
-    : { className?: string, trailerData: FeaturedTrailerDto[], children: React.JSX.Element }) {
+export default function FeaturedTrailer({ className, trailerData }
+    : { className?: string, trailerData: FeaturedTrailerDto[] }) {
     const [videoURL, setVideoURL] = useState("");
     const [currentTrailerIdx, setCurrentTrailerIdx] = useState(0);
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -100,6 +100,26 @@ export default function FeaturedTrailer({ className, trailerData, children }
 
                     <FeaturedTrailerSection trailerData={trailerData} />
                 </FeaturedTrailerContext.Provider>
+            </div>
+        </div>
+    );
+}
+
+export function FeaturedTrailerSkeleton({ className }: { className?: string }) {    
+    return (
+        <div className={classNames(
+            "relative",
+            className
+        )}>
+            <BannerView>
+                <div className="bg-gray-500 max-h-[816px] overflow-hidden">
+                    <video className={`w-full`}>
+                    </video>
+                </div>
+            </BannerView>
+
+            <div className="container px-2 relative lg:absolute bottom-0 lg:-translate-x-1/2 lg:left-1/2">
+                <FeaturedTrailerSectionSkeleton />
             </div>
         </div>
     );

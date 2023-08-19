@@ -33,7 +33,7 @@ export default async function Details({ params }
                     </section>
 
                     {
-                        hypes.length &&
+                        hypes.length > 0 &&
                         <section>
                             <div className="uppercase text-white/30 mb-3">
                                 Hype
@@ -79,5 +79,5 @@ export default async function Details({ params }
                 </section>
             </div>
         </div>
-    )
+    );
 }
