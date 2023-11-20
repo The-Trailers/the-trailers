@@ -4,7 +4,16 @@ const nextConfig = {
         domains: [
             'storage.googleapis.com',
             'm.media-amazon.com',
-            'flxt.tmsimg.com'
+            'flxt.tmsimg.com',
+            'hips.hearstapps.com'
+        ]
+    },
+    async rewrites() {
+        return [
+            {
+                source: "/api/:path*",
+                destination: `${process.env.SERVICE_URL}/:path*`
+            }
         ]
     }
 }
