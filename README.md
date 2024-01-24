@@ -1,6 +1,9 @@
 # The Trailers
 A site for viewing the latest movie trailers. Created based on the design by [Evan Place on Dribble](https://dribbble.com/shots/20292416-The-Trailers-Concept-Site-Part-1).
 
+#### Frameworks & Libraries
+Next.js, Express.js, MongoDB, TailwindCSS, Google Cloud Storage
+
 #### Link
 [The Trailers](https://the-trailers.edwinlee.dev/)
 
